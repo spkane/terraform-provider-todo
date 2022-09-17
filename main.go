@@ -1,6 +1,9 @@
 package main
 
 import (
+	// This uses protocol 5 via the Terraform Plugin SDKv2.
+	// Protocol 6 is available by using the newer Terraform Plugin Framework.
+
 	// Upstream Terraform Plugin Library
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 	// Our local Terraform Provider code
