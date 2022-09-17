@@ -1,7 +1,9 @@
-# terraform-provider-todo
+# terrraform-provider-todo
 
-The source code for these releases and the related todo service can be found here:
+## todo
 
-- https://github.com/spkane/todo-for-terraform/tree/master/terraform-provider-todo
-- https://github.com/spkane/todo-for-terraform/tree/master/cmd/todo-list-server
+### testing
 
+* Acceptance
+  * add import testing
+  * add datasource testing
