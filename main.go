@@ -10,6 +10,9 @@ import (
 	"github.com/spkane/todo-for-terraform/terraform-provider-todo/todo"
 )
 
+// Generate the Terraform provider documentation using `tfplugindocs`:
+//go:generate go run github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
+
 // main is the entrypoint to the terraform plugin
 func main() {
 	// see: https://github.com/hashicorp/terraform/blob/master/plugin/serve.go
