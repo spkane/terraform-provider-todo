@@ -2,7 +2,7 @@
 
 ## `terraform-provider-todo`
 
-This Terraform provider code for the `todo-list-server` was migrated here from [spkane/todo-for-terraform](https://github.com/spkane/todo-for-terraform/tree/master/terraform-provider-todo) to make it easier to deploy this to Hashicorp's Terraform Provider Registry.
+This Terraform provider code for the `todo-list-server` was migrated here from [spkane/todo-for-terraform](https://github.com/spkane/todo-for-terraform/) to make it easier to deploy this to Hashicorp's Terraform Provider Registry.
 
 The most recent release of the `todo-list-server` can be found [here](https://github.com/spkane/todo-for-terraform/releases).
 
