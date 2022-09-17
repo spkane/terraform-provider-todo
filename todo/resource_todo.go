@@ -100,7 +100,7 @@ func resourceTodoUpdate(d *schema.ResourceData, m interface{}) error {
 	// Enable partial state mode
 	// We don't really need this since we can update
 	// everything with a single call.
-	//d.Partial(true)
+	// d.Partial(true)
 
 	c := m.(*client.TodoList)
 
@@ -130,12 +130,12 @@ func resourceTodoUpdate(d *schema.ResourceData, m interface{}) error {
 		// and before disabling partial mode below,
 		// then only the "description" field would be saved.
 
-		//d.SetPartial("description")
+		// d.SetPartial("description")
 	}
 
 	// We succeeded, disable partial mode.
 	// This causes Terraform to save all fields again.
-	//d.Partial(false)
+	// d.Partial(false)
 
 	return resourceTodoRead(d, m)
 }
