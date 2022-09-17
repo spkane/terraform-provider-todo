@@ -1,6 +1,6 @@
-# terrraform-provider-todo
+# `todo-list-server` provider for Terraform
 
-## todo
+## `terraform-provider-todo`
 
 This Terraform provider code for the `todo-list-server` was migrated here from [spkane/todo-for-terraform](https://github.com/spkane/todo-for-terraform/tree/master/terraform-provider-todo) to make it easier to deploy this to Hashicorp's Terraform Provider Registry.
 
