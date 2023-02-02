@@ -43,6 +43,7 @@ repos:
     - id: shfmt
       args: ['-l', '-i', '2', '-ci', '-sr', '-w']
     - id: shellcheck
+      exclude: import.sh
 
 - repo: https://github.com/dnephin/pre-commit-golang
   rev: 74f6978a867aa40e8af6b810ba0f5342c51adc0c

@@ -1,38 +1,31 @@
 package todo
 
 import (
-	"os"
-	"testing"
-
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"github.com/hashicorp/terraform-plugin-framework/providerserver"
+	"github.com/hashicorp/terraform-plugin-go/tfprotov6"
 )
 
-var testAccProviders map[string]*schema.Provider
-var testAccProvider *schema.Provider
-
-func init() {
-	testAccProvider = Provider()
-	testAccProviders = map[string]*schema.Provider{
-		"todo": testAccProvider,
-	}
+const (
+	// providerConfig is a shared configuration to combine with the actual
+	// test configuration so the Todo client is properly configured.
+	// It is also possible to use theTODO_ environment variables instead,
+	// such as updating the Makefile and running the testing through that tool.
+	providerConfig = `
+provider "todo" {
+  host    = "127.0.0.1"
+  port    = 8080
+  schema  = "http"
+  apipath = "/"
 }
+`
+)
 
-func TestProvider(t *testing.T) {
-	if err := Provider().InternalValidate(); err != nil {
-		t.Fatalf("err: %s", err)
+var (
+	// testAccProtoV6ProviderFactories are used to instantiate a provider during
+	// acceptance testing. The factory function will be invoked for every Terraform
+	// CLI command executed to create a provider server to which the CLI can
+	// reattach.
+	testAccProtoV6ProviderFactories = map[string]func() (tfprotov6.ProviderServer, error){
+		"todo": providerserver.NewProtocol6WithError(New()),
 	}
-}
-
-func TestProvider_impl(t *testing.T) {
-	var _ *schema.Provider = Provider()
-}
-
-func testAccPreCheck(t *testing.T) {
-	if os.Getenv("TODO_HOST") == "" {
-		t.Fatal("TODO_HOST must be explicitly set for acceptance tests")
-	}
-
-	if os.Getenv("TODO_PORT") == "" {
-		t.Fatal("TODO_PORT must be explicitly set for acceptance tests")
-	}
-}
+)
