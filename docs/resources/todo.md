@@ -30,3 +30,11 @@ resource "todo_todo" "test" {
 ### Read-Only
 
 - `id` (Number) The unique identifier for the todo.
+
+## Import
+
+Import is supported using the following syntax:
+
+```shell
+terraform import todo_todo.example 42
+```

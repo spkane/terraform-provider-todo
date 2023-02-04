@@ -10,7 +10,7 @@ The Todo provider is designed to work with the todo-list API server, whose
 source code can be found at https://github.com/spkane/todo-for-terraform.
 
 This provider and the todo server and only intended to be used to teach
-classes about Terraform, Terraform providers, and how they interact with
+classes about Terraform, its providers, and how they interact with
 standard REST APIs.
 
 Use the navigation to the left to read about the available resources.

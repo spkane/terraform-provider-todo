@@ -14,3 +14,11 @@ description: |-
 {{ tffile (printf "examples/resources/%s/resource.tf" .Name)}}
 
 {{ .SchemaMarkdown | trimspace }}
+
+## Import
+
+Import is supported using the following syntax:
+
+```shell
+terraform import todo_todo.example 42
+```
