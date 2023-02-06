@@ -13,6 +13,6 @@ import (
 
 func main() {
 	providerserver.Serve(context.Background(), todo.New, providerserver.ServeOpts{
-		Address: "registry.terraform.io/hashicorp/todo",
+		Address: "registry.terraform.io/spkane/todo",
 	})
 }
