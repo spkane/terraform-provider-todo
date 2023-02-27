@@ -183,7 +183,7 @@ func (r *todoResource) Read(ctx context.Context, req resource.ReadRequest, resp 
 	if resp.Diagnostics.HasError() {
 		return
 	}
-	tflog.Debug(ctx, "Read todo resource", map[string]any{"success": true})
+	tflog.Debug(ctx, "Finished reading todo resource", map[string]any{"success": true})
 }
 
 func (r *todoResource) Update(ctx context.Context, req resource.UpdateRequest, resp *resource.UpdateResponse) {

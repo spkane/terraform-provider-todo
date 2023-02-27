@@ -87,3 +87,7 @@ See:
 #### Configuring Hooks
 
 - [.pre-commit-config.yaml](./.pre-commit-config.yaml)
+
+## TODO (FIXME)
+
+- Resource READ should handle 404s that might indicate that a resource has been deleted out of band.

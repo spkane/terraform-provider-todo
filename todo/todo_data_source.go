@@ -102,5 +102,5 @@ func (d *todoDataSource) Read(ctx context.Context, req datasource.ReadRequest, r
 
 	// Set state
 	resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
-	tflog.Debug(ctx, "Read todo data source", map[string]any{"success": true})
+	tflog.Debug(ctx, "Finished reading todo data source", map[string]any{"success": true})
 }
