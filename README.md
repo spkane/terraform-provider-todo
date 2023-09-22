@@ -36,6 +36,26 @@ provider_installation {
 
 And then create and test a few runs based on the files under examples.
 
+### Release
+
+- In a PR, consider updating the Go version and modules.
+
+```sh
+go get -u ./...
+go mod tidy
+```
+
+- In a PR, consider updating the GitHub Actions.
+
+```sh
+vi .github/workflows/release.yaml
+```
+
+- Rebuild, test, and merge.
+
+- Add a new version tag to the `main` branch.
+  - This will trigger the GitHub Actions that build and push the new release.
+
 ### Documentation
 
 Documentation is generated with [tfplugindocs](https://github.com/hashicorp/terraform-plugin-docs) and exists in the [docs](./docs/) directory.
