@@ -161,10 +161,10 @@ func (r *todoResource) Read(ctx context.Context, req resource.ReadRequest, resp 
 	params.SetID(state.ID.ValueInt64())
 	result, err := r.client.Todos.FindTodo(params)
 	if err != nil {
-		resp.Diagnostics.AddError(
-			"Error Reading Todo",
-			"Could not read todo ID "+state.ID.String()+": "+err.Error(),
-		)
+		tflog.Debug(ctx, "Error Reading Todo", map[string]interface{}{
+			"ID":    state.ID.String(),
+			"Error": err.Error()})
+		resp.State.RemoveResource(ctx)
 		return
 	}
 
