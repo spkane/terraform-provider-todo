@@ -4,6 +4,7 @@ vendor
 
 terraform-provider-todo
 bin
+tf-test/.terraform.lock.hcl
 
 # Local .terraform directories
 **/.terraform/*
