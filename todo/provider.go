@@ -53,19 +53,19 @@ func (p *todoProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp 
 		Attributes: map[string]schema.Attribute{
 			"host": schema.StringAttribute{
 				Optional:    true,
-				Description: "The FQDN or IP address for the Todo server (e.g. 127.0.0.1). May also be provided via TODO_HOST environment variable.",
+				Description: "The FQDN or IP address for the Todo server (e.g. '127.0.0.1'). May also be provided via TODO_HOST environment variable.",
 			},
 			"port": schema.StringAttribute{
 				Optional:    true,
-				Description: "The port for the Todo server (e.g. 8080). May also be provided via TODO_PORT environment variable.",
+				Description: "The port for the Todo server (e.g. '8080'). May also be provided via TODO_PORT environment variable.",
 			},
 			"schema": schema.StringAttribute{
 				Optional:    true,
-				Description: "The URL schema for the Todo server (e.g. http). May also be provided via TODO_SCHEMA environment variable.",
+				Description: "The URL schema for the Todo server (e.g. 'http'). May also be provided via TODO_SCHEMA environment variable.",
 			},
 			"apipath": schema.StringAttribute{
 				Optional:    true,
-				Description: "The URL path for the Todo server API (e.g. /). May also be provided via TODO_APIPATH environment variable.",
+				Description: "The URL path for the Todo server API (e.g. '/'). May also be provided via TODO_APIPATH environment variable.",
 			},
 		},
 		Blocks:      map[string]schema.Block{},
@@ -171,7 +171,7 @@ func (p *todoProvider) Configure(ctx context.Context, req provider.ConfigureRequ
 	if port == "" {
 		resp.Diagnostics.AddAttributeWarning(
 			path.Root("port"),
-			"Missing Todo API port (using default value: 8080)",
+			"Missing Todo API port (using default value: '8080')",
 			"The provider is using a default value as there is a missing or empty value for the Todo API port. "+
 				"Set the port value in the configuration or use the TODO_PORT environment variable. "+
 				"If either is already set, ensure the value is not empty.",
