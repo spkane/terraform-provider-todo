@@ -21,7 +21,7 @@ Use the navigation to the left to read about the available resources.
 # Configure the connection details for the Todo API server
 provider "todo" {
   host    = "127.0.0.1"
-  port    = 8080
+  port    = "8080"
   schema  = "http"
   apipath = "/"
 }
@@ -43,7 +43,7 @@ data "todo_todo" "example" {
 
 ### Optional
 
-- `apipath` (String) The URL path for the Todo server API (e.g. /). May also be provided via TODO_APIPATH environment variable.
-- `host` (String) The FQDN or IP address for the Todo server (e.g. 127.0.0.1). May also be provided via TODO_HOST environment variable.
-- `port` (String) The port for the Todo server (e.g. 8080). May also be provided via TODO_PORT environment variable.
-- `schema` (String) The URL schema for the Todo server (e.g. http). May also be provided via TODO_SCHEMA environment variable.
+- `apipath` (String) The URL path for the Todo server API (e.g. '/'). May also be provided via TODO_APIPATH environment variable.
+- `host` (String) The FQDN or IP address for the Todo server (e.g. '127.0.0.1'). May also be provided via TODO_HOST environment variable.
+- `port` (String) The port for the Todo server (e.g. '8080'). May also be provided via TODO_PORT environment variable.
+- `schema` (String) The URL schema for the Todo server (e.g. 'http'). May also be provided via TODO_SCHEMA environment variable.
